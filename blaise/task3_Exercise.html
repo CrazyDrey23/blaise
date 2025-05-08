@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Arithmetic Operators using Buttons</title>
+    <script>
+         function fun1()
+  {
+var a=parseInt(t1.value);
+var b=parseInt(t2.value);
+var c = a + b;
+document.getElementById("output").innerHTML = "Sum = " + c;
+}
+function fun2()
+  {
+var g=parseInt(t1.value);
+var h=parseInt(t2.value);
+var d= g / h;
+document.getElementById("output").innerHTML = "Quotient = " + d;
+  }
+  function fun3()
+  {
+var k=parseInt(t1.value);
+var m=parseInt(t2.value);
+var l= k * m;
+document.getElementById("output").innerHTML = "Product = " + l;
+  }
+  function fun4()
+  {
+var x=parseInt(t1.value);
+var y=parseInt(t2.value);
+var z= x - y;
+document.getElementById("output").innerHTML = "Difference = " + z;
+  }
+  function fun5()
+  {
+var o=parseInt(t1.value);
+var p=parseInt(t2.value);
+var q= o % p;
+document.getElementById("output").innerHTML = "Modulus = " + q;
+  }
+</script>
+</head>
+<body>
+<form>
+ <table>
+ <tr>
+ <td>Enter 1st No.:</td>
+ <td><input type="text" id="t1" /></td>
+ </tr>
+ <tr>
+ <td>Enter 2nd No.:</td>
+ <td><input type="text" id="t2" /></td>
+ </tr>
+ <tr>
+ <td colspan="2" align="center">
+ <input type="button" value="Sum" onClick="fun1()"/>
+ </td>
+ </tr>
+ <tr>
+ <td colspan="2" align="center">
+    <input type="button" value="Quotient" onClick="fun2()"/>
+    </td>
+</tr>
+<tr>
+    <td colspan="2" align="center">
+        <input type="button" value="Product" onClick="fun3()"/>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center">
+            <input type="button" value="Difference" onClick="fun4()"/>
+            </td>
+        </tr>
+      <tr>
+      <td colspan="2" align="center">
+                <input type="button" value="Modulus" onClick="fun5()"/>
+                </td>
+ </tr>
+ <tr>
+ <td colspan="2" align="center">
+ <p id="output"> Output </p>
+ </td>
+ </tr>
+ </table>
+ </form>
+<style>
+    body{
+  margin: 2px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    }
+    table{
+        border: 2px;
+        background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(5,4,71,1) 16%, rgba(9,9,121,1) 39%, rgba(0,212,255,1) 98%);
+        color:blanchedalmond;
+    }
+   table .tr{
+        border: 10px;
+        background: rgb(2,0,36);
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(232,140,28,1) 0%, rgba(9,9,121,1) 57%, rgba(209,223,10,1) 66%, rgba(0,212,255,1) 98%);
+        justify-content: space-between;
+
+   }
+</style>
+</body>
+</html>

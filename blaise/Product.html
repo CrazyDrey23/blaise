@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+        }
+
+        body {
+            background-color: #7d7676;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+    header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100%;
+}
+
+.logo{
+    font-size: 25px;
+    color:azure;
+    text-decoration: none;
+    font-weight: 600;
+
+}
+.navbar a{
+    font-size: 18px;
+    color: aliceblue;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: #145b8f;
+}
+
+.navbar a:hover,
+.navbar a.active{
+    color: rgb(224, 14, 14);
+
+}
+
+
+        .header {
+            height: 80px;
+            width: 70%;
+            background-color: rgb(8, 98, 166);
+            border-radius: 3px;
+            margin: 30px 0px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+        }
+
+        .header .Logo {
+            font-size: 30px;
+            font-weight: bold;
+            color: aliceblue;
+        }
+
+        .cart {
+            display: flex;
+            background-color: aliceblue;
+            justify-content: space-between;
+            align-items: center;
+            padding: 7px 10px;
+            border-radius: 3px;
+            width: 80px;
+        }
+
+        .fa-solid {
+            color: rgb(8, 98, 166);;
+        }
+
+        .cart p {
+            height: 18px;
+            width: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 22px;
+            background-color: rgb(8, 98, 166);
+            color: aliceblue;
+        }
+
+        .container {
+            display: flex;
+            width: 70%;
+            margin-bottom: 30px;
+        }
+
+        #root {
+            width: 60%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+        }
+
+        .sidebar {
+            width: 40%;
+            border-radius: 5px;
+            background-color: #eee;
+            margin-left: 20px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .head {
+            background-color: rgb(8, 98, 166);
+            border-radius: 3px;
+            height: 40px;
+            padding: 10px;
+            margin-bottom: 20px;
+            color: #eee;
+            display: flex;
+            align-items: center;
+        }
+
+        .fot {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0px;
+            padding: 10px 0px;
+            border-top: 1px solid #333;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            background-color: aquamarine;
+            border: 1px solid rgb(28, 131, 235);
+            border-radius: 5px;
+            padding: 15px;
+        }
+
+        .img-box {
+            width: 100%;
+            height: 180%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .images {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .bottom {
+            margin-top: 20px;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            height: 110px;
+        }
+
+        h3 {
+            width: 50%;
+            position: relative;
+            border: none;
+            border-radius: 3px;
+            background-color: rgb(28, 131, 235);
+            padding: 4px 15px;
+            cursor: pointer;
+            color: #eee;
+        }
+
+        button {
+            align-items: center;
+            appearance: none;
+            background-clip: padding-box;
+            background-color: initial;
+            background-image: none;
+            border-style: none;
+            box-sizing: border-box;
+            color: #fff;
+            cursor: pointer;
+            display: inline-block;
+            flex-direction: row;
+            flex-shrink: 0;
+            font-family: Eina01, sans-serif;
+            font-size: 16px;
+            font-weight: 800;
+            justify-content: center;
+            line-height: 24px;
+            margin: 0;
+            min-height: 64px;
+            outline: none;
+            overflow: visible;
+            padding: 19px 26px;
+            pointer-events: auto;
+            position: relative;
+            text-align: center;
+            text-decoration: none;
+            text-transform: none;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            vertical-align: middle;
+            width: auto;
+            word-break: keep-all;
+            z-index: 0;
+        }
+
+        @media (min-width: 768px) {
+            button {
+                padding: 19px 32px;
+            }
+        }
+
+        button:before,
+        button:after {
+            border-radius: 80px;
+        }
+
+        button:before {
+            background-image: linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
+            content: "";
+            display: block;
+            height: 100%;
+            left: 0;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: -2;
+        }
+
+        button:after {
+            background-color: initial;
+            background-image: linear-gradient(#541a0f 0, #0c0d0d 100%);
+            bottom: 4px;
+            content: "";
+            display: block;
+            left: 4px;
+            overflow: hidden;
+            position: absolute;
+            right: 4px;
+            top: 4px;
+            transition: all 100ms ease-out;
+            z-index: -1;
+        }
+
+        button:hover:not(:disabled):before {
+            background: linear-gradient(92.83deg, rgb(255, 116, 38) 0%, rgb(249, 58, 19) 100%);
+        }
+
+        button:hover:not(:disabled):after {
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 0;
+            transition-timing-function: ease-in;
+            opacity: 0;
+        }
+
+        button:active:not(:disabled) {
+            color: #ccc;
+        }
+
+        button:active:not(:disabled):before {
+            background-image: linear-gradient(0deg, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
+        }
+
+        button:active:not(:disabled):after {
+            background-image: linear-gradient(#541a0f 0, #0c0d0d 100%);
+            bottom: 4px;
+            left: 4px;
+            right: 4px;
+            top: 4px;
+        }
+
+        button:disabled {
+            cursor: default;
+            opacity: .24;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: white;
+            border-bottom: 1px solid #aaa;
+            border-radius: 3px;
+            margin: 10px 10px;
+        }
+
+        .row-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            border: 1px solid rgb(28, 131, 235);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .rowing {
+            max-width: 43px;
+            max-height: 43px;
+            border: 50%;
+        }
+
+        .fa-trash:hover {
+            cursor: pointer;
+            color: #333;
+        }
+        .checkout-btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+  <header class="header">
+        
+    <a href = "Task2.html" class="logo">Solo Leveling </a>
+
+    <nav class="navbar">
+         
+        <a href="Task2.html"active">HOME</a>
+        <a href="#">ABOUT</a>
+        <a href="Product.html">PRODUCT</a>
+        <a href="#">PORTFOLIO</a>
+        <a href="#">CONTACT</a>
+      
+        
+    
+</header>
+   <div class="header">
+    <p class="Logo">Solo Leveling</p>
+    <div class="cart">
+      <i class="fa-solid fa-cart-shopping"></i><p id="count">0</p>
+    </div>
+   </div>
+   <div class="container">
+    <div id="root"></div>
+    <div class="sidebar">
+        <div class="head"><p>My Cart</p></div>
+        <div id="cartItem"><p>Your Cart is Empty</p></div>
+        <div class="fot">
+            <h4>Total</h4>
+            <h3 id="total">$ 0.00</h3>
+        </div>
+        <button onclick="checkout()" class="checkout-btn">Checkout</button>
+    </div>
+   </div>
+   <script>
+       const product = [
+           // Your product data here
+           {
+               id: 0,
+               image: 'vol.1.jpg',
+               title: 'Solo Leveling vol 1',
+               price: 14,
+           },
+           {
+               id: 1,
+               image: 'volume.2.jpg',
+               title: 'Solo Leveling vol 2',
+               price: 9,
+           },
+           {
+               id: 2,
+               image: 'vol.2.jpg',
+               title: 'Solo Leveling vol 3',
+               price: 11,
+           },
+           {
+               id: 3,
+               image: 'vol.4.jpg',
+               title: 'Solo Leveling vol 4',
+               price: 19,
+           },
+           {
+               id: 4,
+               image: 'vol.5.jpg',
+               title: 'Solo Leveling vol 5',
+               price: 15,
+           },
+           {
+               id: 5,
+               image: 'vol.6.jpg',
+               title: 'Solo Leveling vol 6',
+               price: 8,
+           },
+           {
+               id: 6,
+               image: 'vol.7.jpg',
+               title: 'Solo Leveling vol 7',
+               price: 11,
+           },
+           {
+               id: 7,
+               image: 'vol.8.jpg',
+               title: 'Solo Leveling vol 8',
+               price: 10,
+           },
+       ];
+
+       let cart = [];
+
+       function addcart(a) {
+           cart.push({ ...product[a] });
+           displaycart();
+       }
+
+       function displaycart() {
+           let totalPrice = 0;
+           let cartItemsHTML = '';
+           if (cart.length === 0) {
+               cartItemsHTML = "<p>Your Cart is Empty</p>";
+           } else {
+               cart.forEach((item) => {
+                   totalPrice += item.price;
+                   cartItemsHTML += `
+                       <div class='cart-item'>
+                           <div class='row-img'>
+                               <img class='rowing' src='${item.image}'>
+                           </div>
+                           <p style='font-size: 15px;'>${item.title}</p>
+                           <h3 style='font-size: 15px;'>$ ${item.price}.00</h3>
+                           <button onclick='removeFromCart(${item.id})'><i class="fa-solid fa-trash"></i></button>
+                       </div>`;
+               });
+           }
+           document.getElementById('cartItem').innerHTML = cartItemsHTML;
+           document.getElementById('total').innerText = `$ ${totalPrice}.00`;
+           document.getElementById('count').innerText = cart.length;
+       }
+
+       document.getElementById('root').innerHTML = `
+           ${product.map((item, index) => `
+               <div class='box'>
+                   <div class='img-box'>
+                       <img class='images' src='${item.image}'>
+                   </div>
+                   <p>${item.title}</p>
+                   <h3>$ ${item.price}.00</h3>
+                   <button onclick='addcart(${index})'>Add to Cart</button>
+               </div>`).join('')}
+       `;
+
+       function removeFromCart(id) {
+            const index = cart.findIndex(item => item.id === id);
+            if (index !== -1) {
+                cart.splice(index, 1);
+                displaycart();
+            }
+        }
+
+        function checkout() {
+            if (cart.length > 0) {
+                const totalPrice = cart.reduce((acc, item) => acc + item.price, 0);
+                alert(`Total price: $${totalPrice}. Thank you for your purchase!`);
+                cart = [];
+                displaycart();
+            } else {
+                alert('Your cart is empty. Add some items before checking out.');
+            }
+        }
+   </script>
+</body>
+</html>

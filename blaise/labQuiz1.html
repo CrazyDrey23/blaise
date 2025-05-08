@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <form >
+        <table>
+            <tr>
+                <td>Number: </td>
+                <td><input type="number" id="t2" /></td> 
+            </tr>
+            <tr>
+                <td>
+                <input type="button" value="Submit" onClick="hello()"/>
+            </td>
+            </tr>
+        </table>
+    </form>
+</body>
+<script>
+    function hello(){
+
+        var a = parseInt(t2.value)
+
+       
+
+        if(a % 2==0){
+            document.write("Even number")
+        }
+        else{
+            document.write("Odd number")
+        }
+    }
+</script>
+</html>

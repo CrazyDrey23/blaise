@@ -1,0 +1,541 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>About Me</title>
+    <link rel="stylesheet" type="text/css" href="About.css">
+</head>
+<style>
+  @import url('https://fonts.googleapis.com/css!family=Poppins:300,400,500,600,700,800,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Popping',sans-serif;
+    scroll-behavior: smooth;
+}
+
+body{
+    display: flex;
+    min-height: 100vh;
+    overflow-x: hidden;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(#13a390,#854cf0)
+}
+
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+}
+
+header .logo{
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li{
+    list-style: none;
+    margin-left: 20px;
+}
+
+header ul li a{
+    text-decoration: none;
+    padding: 6px 15px;
+    color: #fff;
+    border-radius: 20px;
+}
+
+header ul li a:hover,
+header ul li a.active{
+    background: #d14c40;
+    color: #fff;
+}
+
+section{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.container{
+    width: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.container .card{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background: #39235e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+.container .card{
+    opacity: 0.2;
+}
+
+.container .card:hover{
+    opacity: 1;
+}
+
+.container .card::before{
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    bottom: 2px;
+    width: 50%;
+    background: rgba(72, 40, 109, 0.89);
+    pointer-events: none;
+}
+
+.container .card .content{
+    padding: 30px;
+    text-align: center;
+}
+
+.container .card .content h2{
+    position: absolute;
+    right: 30px;
+    font-size: 4em;
+    font-weight: 800;
+    color: #ff968d;
+    z-index: 1;
+    opacity: 0.1;
+    transition: 0.5s;
+}
+
+.container .card:hover .content h2 {
+    opacity: 1;
+    transform: translateY(-70px);
+}
+
+.container .card .content h3{
+    position: relative;
+    font-size: 1.5em;
+    color: #fff;
+    z-index: 2;
+    opacity: 0.5;
+    letter-spacing: 1px;
+    transition: 0.5s;
+}
+
+.container .card .content p{
+    position: relative;
+    font-size: 1.5em;
+    color: #fff;
+    z-index: 2;
+    opacity: 0.5;
+    font-weight: 300;
+    transition: 0.5s;
+}
+
+.container .card:hover .content h3,
+.container .card:hover .content p{
+    opacity: 1;
+}
+
+.container .card span{
+    transition: 0.5;
+    opacity: 0;
+}
+
+.container .card:hover span{
+    opacity: 1;
+}
+
+ .card span:nth-child(1){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, transparent, #fff);
+    animation: animate1 2s linear infinite;
+}
+
+@keyframes animate1{
+    0%{
+        transform: translateX(-100%);
+    }100%{
+        transform: translateX(100%);
+    }
+}
+
+.container .card span:nth-child(2){
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, #fff);
+    animation: animate2 2s linear infinite;
+    animation-delay: 1s;
+}
+
+@keyframes animate2{
+    0%{
+        transform: translateY(-100%);
+    }100%{
+        transform: translateY(100%);
+    }
+}
+
+.container .card span:nth-child(3){
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to left, transparent, #fff);
+    animation: animate3 2s linear infinite;
+}
+
+@keyframes animate3{
+    0%{
+        transform: translateX(100%);
+    }100%{
+        transform: translateX(-100%);
+    }
+}
+
+.container .card span:nth-child(4){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to top, transparent, #fff);
+    animation: animate4 2s linear infinite;
+    animation-delay: 1s;
+}
+
+@keyframes animate4{
+    0%{
+        transform: translateY(100%);
+    }100%{
+        transform: translateY(-100%);
+    }
+}
+
+.button{
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 15px;
+    background: #fff;
+    color: #b36962;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 20px;
+    cursor: pointer;
+    border-color: #b36962;
+}
+ 
+.button:hover {
+    background: #ffffff;
+}
+
+.modal, .modal2, .modal3 {
+  display: none;
+  position: fixed;
+  z-index: 1000000;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  margin: 10% auto;
+  width: 60%;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
+}
+
+.modal-header h2,
+.modal-footer h3 {
+  margin: 0;
+}
+
+.modal-header {
+  background: #b36962;
+  padding: 15px;
+  color: #fff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.modal-body {
+  padding: 10px 20px;
+  background: #fff;
+}
+.modal-body img{
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+.modal-footer {
+  background: #dd8179;
+  padding: 10px;
+  color: #fff;
+  text-align: center;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.close, .close2, .close3 {
+  color: #ccc;
+  float: right;
+  font-size: 30px;
+  color: #fff;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.close2:hover,
+.close2:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.close3:hover,
+.close3:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+</style>
+<body>
+    <header>
+        <a href="#" class="logo"></a>
+        <ul>
+            <li><a href="Task2.html">Home</a></li>
+            <li><a href="About Me.html" class="active">About</a></li>
+            <li><a href="My favourite Manhua.html">My Manhua</a></li>
+
+        </ul>
+    </header>
+    
+    
+    <section>
+        <img src="cult.jpg">
+    </section>
+    <div class="container">
+        <div class="card">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <div class="content">
+                <h3>01</h3>
+                <h3>Solo Levelling</h3>
+                
+                <button id="modal-btn" class="button">Read More</button>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="card">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <div class="content">
+                <h3>02</h3>
+                <h3>Martial Peak</h3>
+                <p></p>
+                <button id="modal-btn2" class="button">Read More</button>
+            </div>
+        </div>
+    </div>  
+    <div class="container">
+        <div class="card">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <div class="content">
+                <h3>03</h3>
+                <h3>Location</h3>
+                <button id="modal-btn3" class="button">Read More</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="Modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>bleyss</h2>
+            </div>
+            <div class="modal-body">
+                <a href="https://mangabuddy.com/mbx14-solo-leveling" target="_blank"><img src="solo-leveling.jpg"></a>
+                </div>
+            <div class="modal-footer">
+            <h3></h3>
+            </div>
+        </div>
+    </div>
+
+    <div id="Modal2" class="modal2">
+        <div class="modal-content">
+            <div class="modal-header">
+            <span class="close2">&times;</span>
+            <h2>Recommendation</h2>
+            </div>
+            <div class="modal-body">
+              <a href="https://mangabuddy.com/martial-peak" target="_blank"><img src="martial peak.jpg"></a>
+
+                </div>
+            <div class="modal-footer">
+            <h3></h3>
+            </div>
+        </div>
+    </div>
+
+    <div id="Modal3" class="modal3">
+        <div class="modal-content">
+            <div class="modal-header">
+            <span class="close3">&times;</span>
+            <h2>Location</h2>
+            </div>
+            <div class="modal-body">
+                <img src="location.png" ></a>
+                </div>
+            <div class="modal-footer">
+            <h3></h3>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    const modal = document.querySelector('#Modal');
+    const modalBtn = document.querySelector('#modal-btn');
+
+    const modal2 = document.querySelector('#Modal2');
+    const modalBtn2 = document.querySelector('#modal-btn2');
+
+    const modal3 = document.querySelector('#Modal3');
+    const modalBtn3 = document.querySelector('#modal-btn3');
+
+    const closeBtn = document.querySelector('.close');
+    const closeBtn2 = document.querySelector('.close2');
+    const closeBtn3 = document.querySelector('.close3');
+
+    modalBtn.addEventListener('click', openModal);
+    closeBtn.addEventListener('click', closeModal);
+
+    modalBtn2.addEventListener('click', openModal2);
+    closeBtn2.addEventListener('click', closeModal2);
+
+    modalBtn3.addEventListener('click', openModal3);
+    closeBtn3.addEventListener('click', closeModal3);
+
+    window.addEventListener('click', outsideClick);
+    window.addEventListener('click', outsideClick2);
+    window.addEventListener('click', outsideClick3);
+
+    function openModal() {
+      modal.style.display = 'block';
+    }
+
+    function openModal2() {
+      modal2.style.display = 'block';
+    }
+
+    function openModal3() {
+      modal3.style.display = 'block';
+    }
+
+    function closeModal() {
+      modal.style.display = 'none';
+    }
+    
+    function closeModal2() {
+      modal2.style.display = 'none';
+    }
+
+    function closeModal3() {
+      modal3.style.display = 'none';
+    }
+
+    function outsideClick(e) {
+      if (e.target == modal) {
+        modal.style.display = 'none';
+      }
+    }
+
+    function outsideClick2(e) {
+      if (e.target == modal2) {
+        modal2.style.display = 'none';
+      }
+    }
+
+    function outsideClick3(e) {
+      if (e.target == modal3) {
+        modal3.style.display = 'none';
+      }
+    }
+    </script>
+</body>
+</html>

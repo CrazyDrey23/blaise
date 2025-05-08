@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <form >
+        <table>
+            <tr>
+                <td>Current Year:</td>
+                <td><input type="number" id="t1" /></td> 
+            </tr>
+            <tr>
+                <td>Birth Year:</td>
+                <td><input type="number" id="t2" /></td> 
+            </tr>
+            <tr>
+                <td>
+                <input type="button" value="Submit" onClick="hello()"/>
+            </td>
+            </tr>
+        </table>
+    </form>
+</body>
+<script>
+    function hello(){
+
+        var CurrentYear = parseInt(t1.value)
+        var BirthYear  = parseInt(t2.value)
+
+        var result = CurrentYear - BirthYear;
+
+        document.write("Your Age is " + result)
+    }
+</script>
+</html>

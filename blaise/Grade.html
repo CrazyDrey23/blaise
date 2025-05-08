@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+
+        }
+        .container{
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(45deg,#240bb0,rgb(83, 171, 243));
+            
+        }
+        .box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+
+        }
+        .container .card{
+            height: 80vh;
+            width: 250px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 20px;
+            box-shadow: rgba(0,0,0,0.15)2.4px 2.4px 2.3px;
+            border-top: rgba(255,255,255,0.2);
+            border-left: rgba(255,255,255,0.2);
+        }
+        h2{
+            text-align: center;
+            position: relative;
+            top: 10%;
+            font-weight: 500;
+            font-size: 35px;
+            color: bisque;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-shadow: rgba(0,0,0,0.15)2.4px 2.4px 2.3px;
+        }
+      input {
+        margin: 20px 0;
+        width: 90%;
+        margin: 10px;
+        height: 20px;
+        outline: 2px;
+        border: 2px;
+        font-weight: 200;
+        text-indent: 30px;
+        padding: 3px 5px;
+        color: black;
+       }
+       ::placeholder{
+        font-weight: bold;
+        text-indent: 30px;
+        padding: 3px 5px;
+        color: black;
+       }
+       button{
+        background-color: rgb(11, 141, 72);
+        outline: none;
+        border: none;
+        font-weight: bold;
+        padding: 3px 10px;
+        color: aqua;
+        margin: 10px 90px;
+       }
+       p{
+        background: rgba(231, 213, 213, 0.3);
+       text-align: center;
+        font-weight: bold;
+        padding: 3px 15px;
+        font-size: 10px;
+        color: aqua;
+        
+       }
+    </style>
+
+    <div class="container">
+        <h2>Grading</h2>
+        <div class="box">
+            <div class="card">
+                <input type="number" id="W" placeholder="Web System ">
+                <input type="number" id="C" placeholder="Computer Programming ">
+                <input type="number" id="P" placeholder="Phisycal Education ">
+                <input type="number" id="I" placeholder="Intigrative Programming">
+                <input type="number" id="H" placeholder="human Computer Interaction ">
+                <input type="number" id="N" placeholder="Networking ">
+                 
+                <button onclick="calculate()">Calculate</button>
+                <p id="WALA"></p>
+                <p id="MERON"></p>
+                <p id="Evaluate"></p>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        function calculate()
+        {
+            let W = document.getElementById('W').value;
+
+            let C = document.getElementById('C').value;
+
+            let P = document.getElementById('P').value;
+
+            let I = document.getElementById('I').value;
+
+            let H = document.getElementById('H').value;
+
+            let N = document.getElementById('N').value;
+
+            const total = parseFloat(W) + parseFloat(C) + parseFloat(P) + parseFloat(I) + parseFloat(H) + parseFloat(N);
+            document.getElementById("WALA").innerHTML = `Your total grade is ${total}`;
+
+            const Average =(total/600)*100;
+            document.getElementById("MERON").innerHTML = `Your total Average is ${Average}`;
+
+            if(Average==100|| Average>=90){
+                document.getElementById("Evaluate").innerHTML = `Your Average is Pass with A+ `;
+            }
+            else if(Average==89 || Average>=85){
+                document.getElementById("Evaluate").innerHTML = `Your Average is pass with  A  `;
+            }
+            else if(Average==84|| Average>=80){
+                document.getElementById("Evaluate").innerHTML = `Your Average is pass with B+ `;
+            }
+            else if(Average==79|| Average>=75){
+                document.getElementById("Evaluate").innerHTML = `Your Average is pass with B `;
+            }
+            else if(Average==74|| Average<75){
+                document.getElementById("Evaluate").innerHTML = `You have Failing Grade `;
+            }
+            else{
+                document.getElementById("Evaluate").innerHTML = `You did not enter any your grade`; 
+            }
+        }
+    </script>
+</body>
+</html>

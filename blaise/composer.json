@@ -1,0 +1,14 @@
+{
+    "name": "alonaaldave/drey",
+    "autoload": {
+        "psr-4": {
+            "Alonaaldave\\Drey\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Drey"
+        }
+    ],
+    "require": {}
+}

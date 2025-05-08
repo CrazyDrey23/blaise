@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Contact Us</title>
+</head>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Popping', sans-serif;
+}
+body{
+    
+    color:white;
+}
+.con{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+form{
+    border: 5px outset orange;
+    background-image:  linear-gradient(to bottom right, rgb(7, 193, 255), rgb(168, 19, 58));
+    display: flex;
+    flex-direction: column;
+    padding: 20px 15px;
+    
+}
+
+form input, form textarea{
+    padding: 15px;
+    margin: 10px;
+    outline: none;
+    border: 0;
+    background-color: gray;
+}
+form button{
+    background-image: linear-gradient(rgb(27, 49, 74), rgb(168, 19, 58));
+    border: 0;
+    outline: none;
+    color:orange;
+    font-size: 30px;
+    width: 300px;
+    padding: 5px;
+    margin: 10px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+}
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100%;
+}
+
+.logo{
+    font-size: 25px;
+    color:azure;
+    text-decoration: none;
+    font-weight: 600;
+
+}
+.navbar a{
+    font-size: 18px;
+    color: rgb(63, 94, 221);
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: #145b8f;
+}
+
+.navbar a:hover,
+.navbar a.active{
+    color: rgb(224, 14, 14);
+
+}
+
+</style>
+<body>
+    <header class="header">
+        <a href="Task2.html" class="logo">Solo Leveling </a>
+        <nav class="navbar">
+            <a href="Task2.html" class="active">HOME</a>
+            <a href="About Me.html">ABOUT</a>
+            <a href="Product.html">PRODUCT</a>
+            <a href="#">PORTFOLIO</a>
+            <a href="Exercise3.html">CONTACT</a>
+        </nav>
+    </header>
+    <div class="con">
+        <form>
+            <button type="Submit">Contact us!</button>
+            <input type="text" placeholder="Name....." id="name">
+            <input type="text" placeholder="Email....." id="email">
+            <input type="text" placeholder="Subject....." id="subject">
+            <textarea type="text" rows="4" placeholder="Message......" id="message"></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+</body>
+</html>

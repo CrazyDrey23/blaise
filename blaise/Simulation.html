@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Form</title>
+    <style>
+        /* Your CSS Styles */
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form action="" method="post">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+            <div class="error"><?= htmlspecialchars($error) ?></div>
+        </form>
+    </div>
+    <?php
+    $error = ""; // Variable to store error messages
+
+    // Define valid login credentials
+    $valid_username = "admin"; // The correct username
+    $valid_password = "secret"; // The correct password
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') { // Check if the form was submitted
+        $username = trim($_POST['username']);
+        $password = trim($_POST['password']);
+
+        if (empty($username) || empty($password)) {
+            $error = "Please fill in both fields.";
+        } else {
+            if ($username === $valid_username && $password === $valid_password) {
+                // Set a session or cookie to remember the login status
+                echo '<script>alert("Log In Successful");</script>';
+            } else {
+                $error = "Wrong username or password.";
+            }
+        }
+    }
+    ?>
+</body>
+</html>
